@@ -4,8 +4,8 @@ class ChronoApi{
     static token = "";
     static username = "";
 
-    //static BASE_URL = "http://localhost:3001"
-    static BASE_URL = "https://chronoplastrecords-d8c7d4480b1a.herokuapp.com";
+    static BASE_URL = "http://localhost:3001"
+    //static BASE_URL = "https://chronoplastrecords-d8c7d4480b1a.herokuapp.com";
 
     static setToken(token){
         ChronoApi.token = token;

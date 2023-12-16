@@ -3,15 +3,10 @@ import { NavLink } from "react-router-dom";
 
 function BandCard(props){
     const band = props.band;
-    const navigate=useNavigate();
-
-    const click = ()=>{
-        navigate(`/bands/${band.id}`)
-    }
 
     return <div>
         <div>
-            <img className="img-25" src={`${band.imageurl}` } alt="No Image"/>
+            <img className="img-25" src={`${band.imageurl}` } alt="Not Found"/>
         </div>
         <div>
             <h2><NavLink to={`/bands/${band.id}`}>{band.name}</NavLink></h2>

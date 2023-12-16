@@ -15,7 +15,7 @@ function BandForm(props){
         console.log(fData);
         let sendData = fData;
         delete sendData.updateImage;
-        if(file!=undefined)sendData={...sendData, "image": file};
+        if(file!==undefined)sendData={...sendData, "image": file};
         console.log(file);
         if(!props.edit){
             await props.sub(sendData);

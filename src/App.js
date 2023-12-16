@@ -90,8 +90,8 @@ function App() {
     console.log("Login Result: ", res);
     setLocalToken(res.token);
     setLocalUser(res.username);
-    setLocalAdmin(res.admin);
-    dispatch({type: "ADMIN", payload: res.admin});
+    setLocalAdmin(res.isadmin);
+    dispatch({type: "ADMIN", payload: res.isadmin});
     dispatch({type: "CHANGE", payload: res.username});
   }
 
@@ -102,8 +102,8 @@ function App() {
     setLocalToken(res.token);
     setLocalUser(res.username);
     console.log("local user: ", getLocalUser());
-    setLocalAdmin(res.admin);
-    dispatch({type: "ADMIN", payload: res.admin});
+    setLocalAdmin(res.isadmin);
+    dispatch({type: "ADMIN", payload: res.isadmin});
     dispatch({type: "CHANGE", payload: res.username});
   }
 

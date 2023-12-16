@@ -28,7 +28,8 @@ function LoginForm(props){
     }
 
     useEffect(()=>{
-        if(user!==""){
+        if(user){
+            console.log("User found");
             navigate("/");
         }
     },[user]);

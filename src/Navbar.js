@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import{Navbar,NavbarBrand, Nav, NavItem} from "reactstrap";
-import { NavLink, redirect, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './App.css';
 
@@ -20,7 +20,7 @@ function NavBar(props){
 
     const logout = async () =>{
         props.logout();
-        navigate('/');
+        navigate("/");
     }
 
     const handleSearch = (evt)=>{

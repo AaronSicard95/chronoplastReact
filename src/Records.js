@@ -14,7 +14,7 @@ function Records(props){
         async function getData(){
             const recordResults = await props.getRecords();
             console.log(recordResults);
-            setRecords(Object.keys(recordResults).length==0?[]:recordResults);
+            setRecords(Object.keys(recordResults).length===0?[]:recordResults);
             setLoading(false);
         }
         getData();
