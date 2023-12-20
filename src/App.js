@@ -127,8 +127,8 @@ function App() {
     return res;
   }
 
-  const getGenres = async (search, onlyNames) =>{
-    const res = await ChronoApi.getGenres(search, onlyNames);
+  const getGenres = async (search) =>{
+    const res = await ChronoApi.getGenres(search);
     return res;
   }
 

@@ -23,17 +23,23 @@ function Cart(props){
         getCart()
     },[]);
 
+    const handleCheckout = async (evt) =>{
+        evt.preventDefault();
+        const res= await props.pay(user);
+        alert(res);
+    }
+
     if(loading)return <h1>LOADING...</h1>
     return <div>
-        <h1>{user}'s Cart:</h1>
+        <h1 className="flavor-text">{user}'s Cart:</h1>
         <ul>
-            {cart.map(c=><li>
+            {cart.map(c=><li className="flavor-text">
                 <h3>{c.record.title}</h3>
                 <p>Price: {c.price}</p>
             </li>)}
         </ul>
-        <h1>Total: {total}</h1>
-        <input onClick={evt=>props.pay(user)} type="button" value="Checkout"/>
+        <h1 className="flavor-text">Total: {total}</h1>
+        <input onClick={handleCheckout} type="button" value="Checkout"/>
     </div>
 }
 

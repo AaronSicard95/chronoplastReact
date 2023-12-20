@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams, NavLink } from"react-router-dom";
 
 function BandPage(props){
+    const imgDefault = useSelector(store=>store.imgDefault);
     const admin = useSelector(store=>store.admin);
     const {id} = useParams(props);
     const [band, setBand] = useState({});
@@ -21,7 +22,7 @@ function BandPage(props){
     if(loading)return <h1>LOADING...</h1>
     return <div className="info-div">
         <div style={{display: "flex", justifyContent:"space-between"}}>
-            <img src={`${band.imageurl}`} alt="No Image"/>
+            <img src={band.imageurl?`${band.imageurl}`:require(`${imgDefault}`)} alt="No Image"/>
             <h1 className="flavor-text" style={{height:"25%", textAlign:"center"}}>{band.name}</h1>
             {admin?<div><NavLink to={`/bands/${id}/edit`}><button>Edit</button></NavLink>
             <NavLink to={`/bands/${id}/delete`}><button>Delete</button></NavLink></div>:""}

@@ -4,6 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import './Record.css';
 
 function RecordPage(props){
+    const imgDefault = useSelector(store=>store.imgDefault);
     const [record, setRecord] = useState({});
     const [loading, setLoading] = useState(true);
     const [addReview, setAddReview] = useState(false);
@@ -65,7 +66,7 @@ function RecordPage(props){
         <div className="record">
             <div style={{display: "flex", justifyContent:"space-between"}}>
             <div style={{maxWidth:"33%"}} >
-                <img src={`${record.imageurl}`} alt="NOT FOUND"/>
+                <img src={record.imageurl?`${record.imageurl}`:require(`${imgDefault}`)} alt="NOT FOUND"/>
             </div>
                 <h1>{record.title}</h1>
                 <div>

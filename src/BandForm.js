@@ -26,7 +26,7 @@ function BandForm(props){
 
     useEffect(()=>{
         async function getData(){
-            const genreData = await props.getGenres("",true);
+            const genreData = await props.getGenres("");
             if(props.edit){
                 const bandData = await props.getBand(id);
                 setFData(newFData=>({origin: bandData.origin, name: bandData.name, bio: bandData.bio, genres: bandData.genres.map(g=>g.name)}));
@@ -71,7 +71,7 @@ function BandForm(props){
         onChange={evt=>setFile(evt.target.files[0])}></input>
         <br/></div>}
         <label htmlFor="genres">Genres: </label>
-        <CreatableSelect onChange={(evt)=>handleSelect(evt, 'genres')} isClearable isMulti options={genres.map(g=>({value:g, label:g}))} value={fData.genres.map(g=>({value:g,label:g}))}/>
+        <CreatableSelect onChange={(evt)=>handleSelect(evt, 'genres')} isClearable isMulti options={genres.map(g=>({value:g.name, label:g.name}))} value={fData.genres.map(g=>({value:g,label:g}))}/>
         <br/>
         <button>Submit</button>
     </form>

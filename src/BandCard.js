@@ -1,12 +1,14 @@
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 function BandCard(props){
+    const imgDefault = useSelector(store=>store.imgDefault);
     const band = props.band;
 
     return <div>
         <div>
-            <img className="img-25" src={`${band.imageurl}` } alt="Not Found"/>
+            <img className="img-25" src={band.imageurl?`${band.imageurl}`:require(`${imgDefault}`) } alt="Not Found"/>
         </div>
         <div>
             <h2><NavLink to={`/bands/${band.id}`}>{band.name}</NavLink></h2>

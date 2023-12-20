@@ -1,6 +1,7 @@
 import { getLocalAdmin, getLocalUser } from "./localStorage";
 
-const INITIAL_STATE = {user:getLocalUser(), admin: getLocalAdmin()};
+const INITIAL_STATE = {user:getLocalUser(), admin: getLocalAdmin(),
+imgDefault: './LogoTransparent.png'};
 
 function userReducer(state=INITIAL_STATE, action){
     switch(action.type){

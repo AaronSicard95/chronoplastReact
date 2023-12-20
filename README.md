@@ -1,5 +1,5 @@
 This site: Chronoplast Records
-Is deployed to: https://chronoplast.vercel.app
+Is deployed to: https://chronoplast.surge.sh
 The backend api is hosted on: https://chronoplastrecords-d8c7d4480b1a.herokuapp.com
 
 The website is used as a  database for records and their associated bands
@@ -7,6 +7,7 @@ for people to look up information on these bands/records as well as
 review rate the listted records. Users also have the ability to order records if there are litings for them made by the admin. At the time of writing I have only made the checkout process clear the cart and submit a test payment (woth no card info) to square which I have working. In the future I will implement shipping APIs and take actual payments.
 
 At the time of writing tests are not implemented but will be created in the future.
+Edit: tests for Routes have been created
 
 The flow starts with the admin creating records/bands/listings for the users to peruse. The users will go on the site and see the top 5 rated records on the site. If they go to their page they can read reviews look at available listings to purchase as well as click the band or associated genres and be taking to their related pages will also allow them to dig deeper into their relations. The user also has the ability to search for bands/records by name or bio. They can them put listings into their cart and checkout.
 
@@ -44,7 +45,7 @@ I used:
     "square": "^33.0.0",
     "supertest": "^6.3.3",
     "uuid": "^9.0.1"
-as well as the squarePayments API, surge(which was down when I attempted to deploy hence vercel), heroku, and vercel.
+as well as the squarePayments API, surge(which was down when I attempted to deploy hence vercel), and heroku.
 
 
 # Getting Started with Create React App

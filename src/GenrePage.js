@@ -24,15 +24,15 @@ function GenrePage(props){
 
     if(loading) return <h1>LOADING...</h1>
     return <div>
-        <h1>{name}</h1>
+        <h1 className="flavor-text">{name}</h1>
         <div>
-            <h3>Records: </h3>
+            <h3 className="flavor-text">Records: </h3>
             <ul>
                 {records.map(r=>(<li><NavLink to={`/records/${r.id}`}>{r.title}</NavLink></li>))}
             </ul>
         </div>
         <div>
-            <h3>Bands: </h3>
+            <h3 className="flavor-text">Bands: </h3>
             <ul>
                 {bands.map(b=>(<li><NavLink to={`/bands/${b.id}`}>{b.name}</NavLink></li>))}
             </ul>

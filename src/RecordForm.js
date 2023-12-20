@@ -10,6 +10,7 @@ function RecordForm(props){
     const [genres, setGenres] = useState([]);
     const [bands, setBands] = useState([]);
     const [loading, setLoading] = useState(true);
+    console.log(fData);
 
     async function handleSubmit(evt){
         evt.preventDefault();
@@ -27,7 +28,7 @@ function RecordForm(props){
 
     useEffect(()=>{
         async function getData(){
-            const genreData = await props.getGenres("",true);
+            const genreData = await props.getGenres("");
             const bandData = await props.getBands();
             if(props.edit){
                 const recordData = await props.getRecord(id);
@@ -73,7 +74,7 @@ function RecordForm(props){
         onChange={evt=>setFile(evt.target.files[0])}></input>
         <br/></div>}
         <label htmlFor="genres">Genres: </label>
-        <CreatableSelect onChange={(evt)=>handleSelect(evt, 'genres')} isClearable isMulti options={genres.map(g=>({value:g, label:g}))} value={fData.genres.map(g=>({value:g,label:g}))}/>
+        <CreatableSelect onChange={(evt)=>handleSelect(evt, 'genres')} isClearable isMulti options={genres.map(g=>({value:g.name, label:g.name}))} value={fData.genres.map(g=>({value:g,label:g}))}/>
         <br/>
         <button>Submit</button>
     </form>

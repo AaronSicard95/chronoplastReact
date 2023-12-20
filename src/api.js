@@ -126,9 +126,9 @@ class ChronoApi{
         }
     }
 
-    static async getGenres(search, onlyNames){
+    static async getGenres(search){
         try{
-            const result = await ChronoApi.request('genres', {search, onlyNames});
+            const result = await ChronoApi.request('genres', {search});
             return result;
         }catch(err){
             return err;
